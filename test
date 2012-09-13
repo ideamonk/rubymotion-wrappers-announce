@@ -1,0 +1,21 @@
+#!/usr/bin/env sh
+
+# Quick n Dirty test
+
+# The following commits should result in tweets -
+#
+# f376dc51fe3407113323fb810b0a31b83e3956b1 - Adds IB
+# 7028f5d1d49532dfe27d9765e6c759851fecf7d3 - merges Promotion from another repo
+# cf9370839babdfc8a39f14ce27e3d295d650a641 - Adds Promotion
+# 0e85e019afcd7b9557af687ac398e5c1f6d70c40 - Adds many -
+#                                                 Sugarcube
+#                                                 Nitron
+#                                                 NanoStoreInMotion
+#                                                 Teacup
+#                                                 Geomotion
+#                                                 Twittermotion
+#
+# Other commits in the list shoulnd't generate error or false tweets
+
+curl -i -X POST -d 'payload={ "commits": [ { "id": "7028f5d1d49532dfe27d9765e6c759851fecf7d3" }, { "id": "cf9370839babdfc8a39f14ce27e3d295d650a641" }, { "id": "91bc925a66ce320ef96aa89ed00ba74c9233df07" }, { "id": "ba7988282953ac5e718ff9a74906f008b807f283" }, { "id": "fc61c7f7ef565397d69a9ad7174899ddd9217edd" }, { "id": "f376dc51fe3407113323fb810b0a31b83e3956b1" }, { "id": "0e85e019afcd7b9557af687ac398e5c1f6d70c40" } ] }' \
+http://localhost:4567/hooker

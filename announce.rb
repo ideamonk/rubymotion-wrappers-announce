@@ -20,6 +20,8 @@ post '/hooker' do
     (push["commits"] || []).each do |commit_meta|
 
       uri_string = "https://api.github.com/repos/clayallsopp/rubymotion-wrappers/commits/#{commit_meta['id']}"
+      # ^ this hard-coding sort of protects from other repos to hook in
+      
       puts "going for #{uri_string} ..."      
       response = open(uri_string) {|io| io.read}
       commit = JSON.parse(response)

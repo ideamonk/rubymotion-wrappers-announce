@@ -8,8 +8,6 @@ client = TwitterOAuth::Client.new(
   :secret          => ENV['TWITTER_ACCESS_SECRET']
 )
 
-client.update("Hola from Heroku")
-
 get '/' do
   "Hi there! I announce new new new Rubymotion Wrappers. Follow me at <a href='https://twitter.com/RM_Wrappers'>@RM_Wrappers</a>"
 end

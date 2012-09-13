@@ -11,3 +11,12 @@ client = TwitterOAuth::Client.new(
 get '/' do
   "Hi there! I announce new new new Rubymotion Wrappers. Follow me at <a href='https://twitter.com/RM_Wrappers'>@RM_Wrappers</a>"
 end
+
+post '/hooker' do
+  push = JSON.parse(params[:payload])
+  commits = push[:commits]
+
+  commits.each do |commit|
+    puts commit[:modified]
+  end
+end

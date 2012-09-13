@@ -1,4 +1,4 @@
-#require 'sinatra'
+require 'sinatra'
 require 'twitter_oauth'
 
 client = TwitterOAuth::Client.new(

@@ -14,9 +14,7 @@ end
 
 post '/hooker' do
   push = JSON.parse(params[:payload])
-  commits = push[:commits]
+  puts push
 
-  commits.each do |commit|
-    puts commit[:modified]
-  end
+  
 end

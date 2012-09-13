@@ -13,12 +13,7 @@ get '/' do
 end
 
 post '/hooker' do
-  puts params[:payload]
-  
-  push = JSON.parse(params[:payload])
-  commits = push[:commits]
+  puts params
 
-  commits.each do |commit|
-    puts commit[:modified]
-  end
+  "Hola"
 end

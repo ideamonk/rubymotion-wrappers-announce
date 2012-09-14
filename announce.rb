@@ -18,7 +18,9 @@ post '/hooker' do
 
   if push 
     (push["commits"] || []).each do |commit_meta|
-
+      
+      # these should get pushed into a background queue, but we're not using webhooks for announcements now.
+      
       uri_string = "https://api.github.com/repos/clayallsopp/rubymotion-wrappers/commits/#{commit_meta['id']}"
       # ^ this hard-coding sort of protects from other repos to hook in
       
